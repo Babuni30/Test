@@ -31,3 +31,12 @@ int f0/1
 ip add 202.56.2.1 255.255.255.0
 {configure any routing protocol exect RIP}
 
+
+### Rule for ASA ###
+dhcp address 172.168.0.2- 172.168.0.10 inside
+dhcp dns 202.56.2.2
+route outside 0.0.0.0 0.0.0.0 192.168.0.1
+object network example
+subnet 172.168.0.0 255.255.0.0
+nat (inside,outside) dynamic interface
+end
